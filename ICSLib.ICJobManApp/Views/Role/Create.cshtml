@@ -1,0 +1,183 @@
+﻿@model ICSLib.Authen.Models.Roles.RoleCreateRequest
+
+@{
+    ViewData["Title"] = "Thêm Chức năng hệ thống";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid px-4">
+    <h3 class="mt-4">@ViewData["Title"]</h3>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-controller="home" asp-action="index">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a asp-controller="role" asp-action="index">Chức năng</a></li>
+        <li class="breadcrumb-item active">Thêm mới</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <div class="row">
+                <span style="font-size:11px; color:gray;">Các trường có dấu <font style="color:red;">*</font> là bắt buộc</span>
+            </div>
+        </div>
+        <div class="card-body d-flex justify-content-center">
+            <form asp-action="Create" class="col-12">
+                <div class="row form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        @*<div asp-validation-summary="All" class="text-danger"></div>*@
+                        @if (!string.IsNullOrEmpty(ViewBag.Message))
+                        {
+                            <div class="alert alert-success pt-2 pb-2" role="alert">
+                                @ViewBag.Message
+                            </div>
+                        }
+                    </div>
+                    <div class="col-12 col-lg-4">
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="ParentRoleId" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        @Html.DropDownListFor(
+                           m => m.ParentRoleId,
+                           ViewBag.Roles as SelectList,
+                           new { @class = "form-control select2" }
+                        )
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="ParentRoleId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="SortOrder" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <input asp-for="SortOrder" class="form-control" />
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="SortOrder" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="Description" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <input asp-for="Description" class="form-control" />
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="Name" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <input asp-for="Name" class="form-control" placeholder="Tên = Controller + '-' + Action" />
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="Controler" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <input asp-for="Controler" class="form-control" />
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="Controler" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="Action" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <input asp-for="Action" class="form-control" />
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="Action" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="Icon" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <input asp-for="Icon" class="form-control" />
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="Icon" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="IsShow" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        @Html.DropDownListFor(
+                           m => m.IsShow,
+                           new List<SelectListItem>() {
+                               new SelectListItem() {
+                                   Value = "1",
+                                   Text = "Hiển thị",
+                                   Selected = (Model == null || Model.IsShow == 1)
+                               },
+                               new SelectListItem() {
+                                   Value = "0",
+                                   Text = "Không hiển thị",
+                                   Selected = (Model != null && Model.IsShow == 0)
+                               }
+                           },
+                           new { @class = "form-control select2" }
+                       )
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="IsShow" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="StatusId" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        @Html.DropDownListFor(
+                           m => m.StatusId,
+                           new List<SelectListItem>() {
+                               new SelectListItem() {
+                                   Value = "1",
+                                   Text = "Hoạt động",
+                                   Selected = (Model == null || Model.StatusId == 1)
+                               },
+                               new SelectListItem() {
+                                   Value = "0",
+                                   Text = "Tạm dừng",
+                                   Selected = (Model != null && Model.StatusId == 0)
+                               }
+                           },
+                           new { @class = "form-control select2" }
+                       )
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="StatusId" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group mt-3 d-flex justify-content-end">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <a class="btn btn-secondary" asp-controller="role" asp-action="index">Về danh sách</a>
+                        <input type="submit" value="Thêm" class="btn btn-primary" style="margin-left:10px !important; padding-left:30px; padding-right:30px;" />
+                    </div>
+                    <div class="col-12 col-lg-4">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

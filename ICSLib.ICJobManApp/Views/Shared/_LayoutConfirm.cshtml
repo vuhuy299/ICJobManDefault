@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <script src="/js/jQuery.js"></script>
+</head>
+<body>
+    @RenderBody()
+    <script>
+        function onCancel_Click() {
+            window.parent.closeDialog(false);
+            return false;
+        }
+
+        function onDone() {
+            window.parent.closeDialog(true);
+            return false;
+        }
+
+        @if (!string.IsNullOrEmpty(ViewBag.Javascript)) {
+            @ViewBag.Javascript
+        }
+    </script>
+</body>
+</html>

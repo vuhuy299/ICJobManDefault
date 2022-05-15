@@ -1,0 +1,1 @@
+﻿[ {"RoleGroupId":"1","RoleGroupName":"System administrator","RoleGroupDesc":"Quản trị hệ thống","SortOrder":"1","StatusId":"1"}]

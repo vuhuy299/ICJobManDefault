@@ -1,0 +1,47 @@
+﻿@model ICSLib.Authen.Models.RoleGroups.RoleGroupDeleteRequest
+
+@{
+    ViewData["Title"] = "Xóa Quyền hệ thống";
+    Layout = "~/Views/Shared/_LayoutConfirm.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            @if (Model != null)
+            {
+                <dl class="row">
+                    @if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+                        <div class="alert alert-success pt-2 pb-2" role="alert">
+                            @ViewBag.Message
+                        </div>
+                    }
+                    <dt class="col-3">
+                        @Html.DisplayNameFor(model => model.RoleGroupName)
+                    </dt>
+                    <dd class="col-9">
+                        @Html.DisplayFor(model => model.RoleGroupName)
+                    </dd>
+                    <dt class="col-3">
+                        @Html.DisplayNameFor(model => model.RoleGroupDesc)
+                    </dt>
+                    <dd class="col-9">
+                        @Html.DisplayFor(model => model.RoleGroupDesc)
+                    </dd>
+                </dl>
+                <form asp-action="delete" asp-controller="rolegroup">
+                    <input type="hidden" asp-for="RoleGroupId" />
+                    <input type="hidden" asp-for="RoleGroupName" />
+                    <input type="hidden" asp-for="RoleGroupDesc" />
+
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group mt-3 d-flex justify-content-end">
+                        <input type="button" value="Hủy" onclick="return onCancel_Click();" class="btn btn-secondary" style="margin-left:10px !important; padding-left:30px; padding-right:30px;" />
+                        <input type="submit" value="Xóa" class="btn btn-danger" style="margin-left:10px !important; padding-left:30px; padding-right:30px;" />
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+</div>

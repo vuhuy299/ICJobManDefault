@@ -1,0 +1,100 @@
+﻿@using ICSLib.Authen.Models.Roles
+@using Newtonsoft.Json
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, ICSLib.JobManApp
+@{
+    List<RoleViewModel> menus = new List<RoleViewModel>();
+    if (!string.IsNullOrEmpty(ViewBag.Menu))
+    {
+        menus = JsonConvert.DeserializeObject<List<RoleViewModel>>(ViewBag.Menu);
+    }
+}
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                @if (menus != null && menus.Count > 0)
+                {
+                    foreach (var menu1 in menus.Where(m => m.LevelId == 1).ToList())
+                    {
+                        <div class="sb-sidenav-menu-heading">@menu1.Description</div>
+                        foreach (var menu2 in menus.Where(m => m.ParentRoleId == menu1.Id).ToList())
+                        {
+                            if (!string.IsNullOrEmpty(menu2.Controler) && !string.IsNullOrEmpty(menu2.Action))
+                            {
+                                <a class="nav-link @(menu2.Selected ? "text-white" : "")" asp-controller="@menu2.Controler" asp-action="@menu2.Action">
+                                    @if (!string.IsNullOrEmpty(menu2.Icon))
+                                    {
+                                        <div class="sb-nav-link-icon"><i class="@menu2.Icon"></i></div>
+                                    }
+                                    @menu2.Description
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="nav-link collapsed @(menu2.Selected ? "text-white" : "")" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts_@menu2.Id" aria-expanded="@(menu2.Selected ? "true" : "false")" aria-controls="collapseLayouts_@menu2.Id">
+                                    @if (!string.IsNullOrEmpty(menu2.Icon))
+                                    {
+                                        <div class="sb-nav-link-icon"><i class="@menu2.Icon"></i></div>
+                                    }
+                                    @menu2.Description
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse @(menu2.Selected ? "show" : "")" id="collapseLayouts_@menu2.Id" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        @foreach (var menu3 in menus.Where(m => m.ParentRoleId == menu2.Id).ToList())
+                                        {
+                                            <a class="nav-link @(menu3.Selected ? "text-white" : "")" asp-controller="@menu3.Controler" asp-action="@menu3.Action">@menu3.Description</a>
+                                        }
+                                    </nav>
+                                </div>
+                            }
+                        }
+                    }
+                }
+
+                @*<div class="sb-sidenav-menu-heading">Hệ thống quản trị</div>
+                    <a class="nav-link" asp-controller="home" asp-action="index">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Trang chủ
+                    </a>
+                    <div class="sb-sidenav-menu-heading">Hệ thống</div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                        Bảo mật
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" asp-controller="rolegroup" asp-action="index">Quyền hệ thống</a>
+                            <a class="nav-link" asp-controller="role" asp-action="index">Chức năng</a>
+                            <a class="nav-link" asp-controller="user" asp-action="index">Người dùng</a>
+                        </nav>
+                    </div>
+                    <div class="sb-sidenav-menu-heading">Bóng đá</div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <div class="sb-nav-link-icon"><i class="fas fa-futbol"></i></div>
+                        Dữ liệu
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                Cơ sở
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" asp-controller="phase" asp-action="index">Gai đoạn</a>
+                                    <a class="nav-link" asp-controller="phase" asp-action="index">Vòng đấu</a>
+                                </nav>
+                            </div>
+                        </nav>
+                    </div>*@
+            </div>
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Logged in as: @User.Identity.Name</div>
+        </div>
+    </nav>
+</div>

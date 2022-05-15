@@ -1,0 +1,14 @@
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\bin\Debug\net6.0\ICSLib.BaseModels.deps.json
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\bin\Debug\net6.0\ICSLib.BaseModels.dll
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\bin\Debug\net6.0\ICSLib.BaseModels.pdb
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\obj\Debug\net6.0\ICSLib.BaseModels.csproj.AssemblyReference.cache
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\obj\Debug\net6.0\ICSLib.BaseModels.GeneratedMSBuildEditorConfig.editorconfig
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\obj\Debug\net6.0\ICSLib.BaseModels.AssemblyInfoInputs.cache
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\obj\Debug\net6.0\ICSLib.BaseModels.AssemblyInfo.cs
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\obj\Debug\net6.0\ICSLib.BaseModels.csproj.CoreCompileInputs.cache
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\obj\Debug\net6.0\ICSLib.BaseModels.dll
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\obj\Debug\net6.0\refint\ICSLib.BaseModels.dll
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\obj\Debug\net6.0\ICSLib.BaseModels.pdb
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\obj\Debug\net6.0\ref\ICSLib.BaseModels.dll
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\bin\Debug\net6.0\ICSLib.BaseModels.runtimeconfig.json
+F:\CODE\C#\ICJobMan\ICSLib.BaseModels\obj\Debug\net6.0\ICSLib.BaseModels.genruntimeconfig.cache

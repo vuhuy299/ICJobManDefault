@@ -1,0 +1,74 @@
+﻿@model ICSLib.Authen.Models.RoleClaims.RoleClaimEditRequest
+
+@{
+    ViewData["Title"] = "Cập nhật Claim của quyền " + ViewBag.RoleName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid px-4">
+    <h3 class="mt-4">@ViewData["Title"]</h3>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-controller="home" asp-action="index">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a asp-controller="role" asp-action="index">Claim của Quyền</a></li>
+        <li class="breadcrumb-item active">Cập nhật</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <div class="row">
+                <span style="font-size:11px; color:gray;">Các trường có dấu <font style="color:red;">*</font> là bắt buộc</span>
+            </div>
+        </div>
+        <div class="card-body d-flex justify-content-center">
+            <form asp-action="Edit" class="col-12">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="RoleId" />
+                <div class="row form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        @*<div asp-validation-summary="All" class="text-danger"></div>*@
+                        @if (!string.IsNullOrEmpty(ViewBag.Message))
+                        {
+                            <div class="alert alert-success pt-2 pb-2" role="alert">
+                                @ViewBag.Message
+                            </div>
+                        }
+                    </div>
+                    <div class="col-12 col-lg-4">
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="ClaimType" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <input asp-for="ClaimType" class="form-control" />
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="ClaimType" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                        <label asp-for="ClaimValue" class="control-label"></label>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <input asp-for="ClaimValue" class="form-control" />
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <span asp-validation-for="ClaimValue" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2 form-group mt-3 d-flex justify-content-end">
+                    <div class="col-12 col-lg-3 d-flex justify-content-lg-end align-items-center">
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <a class="btn btn-secondary" asp-controller="roleclaim" asp-action="index" asp-route-roleid="@Model.RoleId">Về danh sách</a>
+                        <input type="submit" value="Cập nhật" class="btn btn-primary" style="margin-left:10px !important; padding-left:30px; padding-right:30px;" />
+                    </div>
+                    <div class="col-12 col-lg-4">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

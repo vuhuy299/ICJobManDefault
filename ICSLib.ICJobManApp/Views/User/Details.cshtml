@@ -1,0 +1,88 @@
+﻿@model ICSLib.Authen.Models.Users.UserViewModel
+
+@{
+    ViewData["Title"] = "Thông tin Người dùng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid px-4">
+    <h3 class="mt-4">@ViewData["Title"]</h3>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-controller="home" asp-action="index">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a asp-controller="user" asp-action="index">Người dùng</a></li>
+        <li class="breadcrumb-item active">Thông tin</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <div class="row">
+                <span>Thông tin Người dùng</span>
+            </div>
+        </div>
+        <div class="card-body">
+            @if (Model != null)
+            {
+                <dl class="row">
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </dt>
+                    <dd class="col-sm-9">
+                        <b>@Html.DisplayFor(model => model.UserName)</b>
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.PhoneNumber)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.FullName)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.GenderId)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.GenderName)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.DateOfBirth)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @(Model.DateOfBirth == null || Model.DateOfBirth <= DateTime.MinValue? "..." : ((DateTime)Model.DateOfBirth).ToString("dd/MM/yyyy"))
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Address)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Address)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Comments)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @(string.IsNullOrEmpty(Model.Comments) ? "..." : Model.Comments)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.UserStatusId)
+                    </dt>
+                    <dd class="col-sm-9">
+                        <div class="btn @(Model.UserStatusId == 2 ? "btn-dark" : (Model.UserStatusId == 1 ? "btn-info" : "btn-danger")) text-white pt-0 pb-0" style="font-size:13px; cursor:default;">
+                            @Html.DisplayFor(modelItem => Model.UserStatusName)
+                        </div>
+                    </dd>
+                </dl>
+                <div class="form-group mt-3 d-flex justify-content-end">
+                    <a class="btn btn-secondary" asp-controller="user" asp-action="index">Về danh sách</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

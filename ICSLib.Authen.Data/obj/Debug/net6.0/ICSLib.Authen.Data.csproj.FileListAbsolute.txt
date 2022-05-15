@@ -1,0 +1,17 @@
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\bin\Debug\net6.0\ICSLib.Authen.Data.deps.json
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\bin\Debug\net6.0\ICSLib.Authen.Data.runtimeconfig.json
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\bin\Debug\net6.0\ICSLib.Authen.Data.dll
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\bin\Debug\net6.0\ICSLib.Authen.Data.pdb
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\bin\Debug\net6.0\ICSLib.Utilities.dll
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\bin\Debug\net6.0\ICSLib.Utilities.pdb
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\ICSLib.Authen.Data.csproj.AssemblyReference.cache
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\ICSLib.Authen.Data.GeneratedMSBuildEditorConfig.editorconfig
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\ICSLib.Authen.Data.AssemblyInfoInputs.cache
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\ICSLib.Authen.Data.AssemblyInfo.cs
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\ICSLib.Authen.Data.csproj.CoreCompileInputs.cache
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\ICSLib.Authen.Data.csproj.CopyComplete
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\ICSLib.Authen.Data.dll
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\refint\ICSLib.Authen.Data.dll
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\ICSLib.Authen.Data.pdb
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\ICSLib.Authen.Data.genruntimeconfig.cache
+F:\CODE\C#\ICJobMan\ICSLib.Authen.Data\obj\Debug\net6.0\ref\ICSLib.Authen.Data.dll

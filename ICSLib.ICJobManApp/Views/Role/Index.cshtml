@@ -1,0 +1,115 @@
+﻿@using ICSLib.BaseModels.Common
+@using ICSLib.Authen.Models.Roles
+@model List<RoleViewModel>
+
+@{
+    ViewData["Title"] = "Chức năng hệ thống";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+}
+@section Scripts{
+}
+<div class="container-fluid px-4">
+    <h3 class="mt-4">@ViewData["Title"]</h3>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="@Url.Action("index", "home")">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Quyền hệ thống</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header pt-1 pb-1">
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <div class="row">
+                        <span style="font-size:12px; color:GrayText;">Tìm kiếm</span>
+                    </div>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <a class="btn btn-primary pt-1 pb-1" asp-controller="role" asp-action="create">Thêm</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body pt-1 pb-1">
+            <div class="row">
+                <div class="col">
+                    <form asp-action="index" method="get">
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-6 mt-2">
+                                <input type="text" class="form-control" placeholder="Từ khóa..." name="keyword" value="@ViewBag.Keyword" />
+                            </div>
+                            <div class="col-12 col-md-6 mt-2">
+                                <button type="submit" class="btn btn-secondary" value="Tìm">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col-6 d-flex align-items-center">
+            <div class="row">
+                <span style="font-size:12px; color:gray;">Tìm thấy <font style="color:red;">@Model.Count</font> bản ghi</span>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <table id="datatablesSimple" data-searching="false" data-paging="false" data-info="false">
+            <thead>
+                <tr>
+                    <th data-sortable="false" style="text-align:center; width:50px;">
+                        #
+                    </th>
+                    <th data-sortable="false">Chức năng</th>
+                    <th data-sortable="false" style="text-align:center">Hiển thị</th>
+                    <th data-sortable="false" style="text-align:center">Trạng thái</th>
+                    <th data-sortable="false"></th>
+                    <th data-sortable="false"></th>
+                    <th data-sortable="false"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr class="@(count % 2 == 0 ? "bg-white" : "bg-light")">
+                        <td style="text-align:center; width:50px;">
+                            @item.SortOrder
+                        </td>
+                        <td>
+                            <span style="font-weight:@(item.LevelId == 1 || item.LevelId == 2 ? "bold":"normal"); color:@(item.LevelId == 1 ? "blue":"black")">
+                                @Html.Raw(item.Description.Replace(":--", "&nbsp;&nbsp;&nbsp;"))
+                            </span>
+                        </td>
+                        <td width="80px" align="center">
+                            <i class="fa fa-@(item.IsShow == 1 ? "eye" : "eye-slash")" style="color:@(item.IsShow == 1 ? "gray" : "lightgray")"></i>
+                        </td>
+                        <td width="140px">
+                            <div class="btn @(item.StatusId == 1 ? "btn-info" : "btn-danger") w-100 text-white pt-0 pb-0" style="font-size:13px; cursor:default;">
+                                @(item.StatusId == 1 ? "Hoạt động" : "Tạm dừng")
+                            </div>
+                        </td>
+                        @*<td style="width:70px">
+                            @Html.ActionLink("Claims", "index", "roleclaim", new { roleId = item.Id })
+                        </td>*@
+                        <td style="width:40px" align="center">
+                            <a asp-controller="role" asp-action="details" asp-route-id="@item.Id" title="Xem">
+                                <i class="fa fa-info-circle" style="color:#0dcaf0; text-decoration:none;"></i>
+                            </a>
+                        </td>
+                        <td style="width:40px" align="center">
+                            <a asp-controller="role" asp-action="edit" asp-route-id="@item.Id" title="Sửa">
+                                <i class="fa fa-edit" style="color:gray; text-decoration:none;"></i>
+                            </a>
+                        </td>
+                        <td style="width:40px" align="center">
+                            <a href="javascript:openDialog('@Url.Action("delete", "role", new { id = item.Id })', 'Xóa Chức năng')" title="Xóa">
+                                <i class="fa fa-trash" style="color:red; text-decoration:none;"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

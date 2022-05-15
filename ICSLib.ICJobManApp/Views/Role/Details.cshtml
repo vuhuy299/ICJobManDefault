@@ -1,0 +1,58 @@
+﻿@model ICSLib.Authen.Models.Roles.RoleViewModel
+
+@{
+    ViewData["Title"] = "Thông tin Chức năng hệ thống";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid px-4">
+    <h3 class="mt-4">@ViewData["Title"]</h3>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-controller="home" asp-action="index">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a asp-controller="role" asp-action="index">Chức năng</a></li>
+        <li class="breadcrumb-item active">Thông tin</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <div class="row">
+                <span>Thông tin Chức năng hệ thống</span>
+            </div>
+        </div>
+        <div class="card-body">
+            @if (Model != null)
+            {
+                <dl class="row">
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Claims)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @if (Model.Claims.Count > 0)
+                        {
+                            <ul>
+                                @foreach (var claim in Model.Claims)
+                                {
+                                    <li>@claim.ClaimType: @claim.ClaimValue</li>
+                                }
+                            </ul>
+                        }
+                    </dd>
+                </dl>
+                <div class="form-group mt-3 d-flex justify-content-end">
+                    <a class="btn btn-secondary" asp-controller="role" asp-action="index">Về danh sách</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

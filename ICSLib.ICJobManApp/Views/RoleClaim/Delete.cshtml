@@ -1,0 +1,48 @@
+﻿@model ICSLib.Authen.Models.RoleClaims.RoleClaimDeleteRequest
+
+@{
+    ViewData["Title"] = "Xóa Claim của quyền " + ViewBag.RoleName;
+    Layout = "~/Views/Shared/_LayoutConfirm.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            @if (Model != null)
+            {
+                <dl class="row">
+                    @if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+                        <div class="alert alert-success pt-2 pb-2" role="alert">
+                            @ViewBag.Message
+                        </div>
+                    }
+                    <dt class="col-3">
+                        @Html.DisplayNameFor(model => model.ClaimType)
+                    </dt>
+                    <dd class="col-9">
+                        @Html.DisplayFor(model => model.ClaimType)
+                    </dd>
+                    <dt class="col-3">
+                        @Html.DisplayNameFor(model => model.ClaimValue)
+                    </dt>
+                    <dd class="col-9">
+                        @Html.DisplayFor(model => model.ClaimValue)
+                    </dd>
+                </dl>
+                <form asp-action="delete" asp-controller="roleclaim">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="RoleId" />
+                    <input type="hidden" asp-for="ClaimType" />
+                    <input type="hidden" asp-for="ClaimValue" />
+
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group mt-3 d-flex justify-content-end">
+                        <input type="button" value="Hủy" onclick="return onCancel_Click();" class="btn btn-secondary" style="margin-left:10px !important; padding-left:30px; padding-right:30px;" />
+                        <input type="submit" value="Xóa" class="btn btn-danger" style="margin-left:10px !important; padding-left:30px; padding-right:30px;" />
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+</div>

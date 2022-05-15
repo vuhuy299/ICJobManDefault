@@ -1,0 +1,44 @@
+﻿@model ICSLib.Authen.Models.RoleGroups.RoleGroupViewModel
+
+@{
+    ViewData["Title"] = "Thông tin Quyền hệ thống";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid px-4">
+    <h3 class="mt-4">@ViewData["Title"]</h3>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-controller="home" asp-action="index">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a asp-controller="rolegroup" asp-action="index">Quyền hệ thống</a></li>
+        <li class="breadcrumb-item active">Thông tin</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <div class="row">
+                <span>Thông tin Quyền hệ thống</span>
+            </div>
+        </div>
+        <div class="card-body">
+            @if (Model != null)
+            {
+                <dl class="row">
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.RoleGroupName)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.RoleGroupName)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.RoleGroupDesc)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.RoleGroupDesc)
+                    </dd>
+                </dl>
+                <div class="form-group mt-3 d-flex justify-content-end">
+                    <a class="btn btn-secondary" asp-controller="rolegroup" asp-action="index">Về danh sách</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

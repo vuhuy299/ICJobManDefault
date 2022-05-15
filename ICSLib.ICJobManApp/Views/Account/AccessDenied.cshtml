@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Quyền truy cập bị hạn chế";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid px-4">
+    @*<h3 class="mt-4">@ViewData["Title"]</h3>*@
+    @*<ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a asp-controller="home" asp-action="index">Trang chủ</a></li>
+            <li class="breadcrumb-item active">hạn chế truy cập</li>
+        </ol>*@
+    <div class="card mb-4 mt-4">
+        <div class="card-header">
+            <div class="row">
+                <span style="font-size:11px; color:gray;">@ViewData["Title"]</span>
+            </div>
+        </div>
+        <div class="card-body" style="color:red;">
+            <div class="row">
+                <div class="col fw-bolder text-center">
+                    Bạn chưa có quyền truy cập chức năng này.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    Vui lòng liên hệ ban quản trị để được hỗ trợ!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

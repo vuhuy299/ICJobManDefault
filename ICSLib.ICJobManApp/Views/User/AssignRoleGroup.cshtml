@@ -1,0 +1,70 @@
+﻿@model ICSLib.Authen.Models.Users.UserAssignRoleGroupRequest
+
+@{
+    ViewData["Title"] = "Gán Quyền cho tài khoản " + Model.Fullname;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+}
+
+<div class="container-fluid px-4">
+    <h3 class="mt-4">@ViewData["Title"]</h3>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-controller="home" asp-action="index">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a asp-controller="user" asp-action="index">Người dùng</a></li>
+        <li class="breadcrumb-item active">Gán Quyền</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <div class="row">
+                <span style="font-size:11px; color:gray;">Chọn các Quyền cần thiết và click nút Cập nhật để hoàn tất</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <form asp-action="AssignRoleGroup" class="col-12">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="alert alert-success pt-2 pb-2" role="alert">
+                    @ViewBag.Message
+                </div>
+            }
+            <input type="hidden" asp-for="UserId" />
+            <input type="hidden" asp-for="Fullname" />
+            <table id="datatablesSimple" data-searching="false" data-paging="false" data-info="false">
+                <thead>
+                    <tr>
+                        <th data-sortable="false">Quyền</th>
+                        <th data-sortable="false">Mô tả</th>
+                        <th data-sortable="false" style="text-align:center;">Chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (var i = 0; i < Model.RoleGroups.Count; i++)
+                    {
+                        count++;
+                        <tr class="@(count % 2 == 0 ? "bg-white" : "bg-light")">
+                            <td>
+                                @Model.RoleGroups[i].RoleGroupName
+                            </td>
+                            <td>
+                                @Model.RoleGroups[i].RoleGroupDesc
+                            </td>
+                            <td align="center">
+                                <input type="hidden" asp-for="RoleGroups[i].RoleGroupId" />
+                                <input type="hidden" asp-for="RoleGroups[i].RoleGroupName" />
+                                <input type="hidden" asp-for="RoleGroups[i].RoleGroupDesc" />
+
+                                <input type="checkbox" asp-for="RoleGroups[i].Selected" />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="form-group mt-2 d-flex justify-content-end">
+                <a class="btn btn-secondary" asp-controller="user" asp-action="index">Về danh sách</a>
+                <input type="submit" value="Cập nhật" class="btn btn-primary" style="margin-left:10px !important; padding-left:30px; padding-right:30px;" />
+            </div>
+        </form>
+    </div>
+</div>

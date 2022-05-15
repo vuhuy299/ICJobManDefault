@@ -1,0 +1,140 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Helpers", "1. Helpers", "{A81D6822-0D89-4F31-9A23-612F12D05FBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Services", "4. Services", "{90BDDA53-1D14-454F-AAC7-041498756932}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Applications", "5. Applications", "{5FB77D56-BC48-4E94-94BE-773850679437}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authen", "Authen", "{40E2C674-B4B3-44AC-9910-49C405C4DE53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Data", "2. Data", "{D7671736-690B-4F7C-9D0B-FA8D712BD6A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Model", "3. Model", "{D9AF5CBB-B791-4738-ABA6-42A168E1B77E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authen", "Authen", "{CDCC27A7-2E18-421E-873A-20248989AC7C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authen", "Authen", "{008EE24F-6335-45B3-847E-EDD8C9E13548}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICSLib.BaseModels", "ICSLib.BaseModels\ICSLib.BaseModels.csproj", "{FF28063E-04BE-406A-B9C4-58A28D02B9AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICSLib.Utilities", "ICSLib.Utilities\ICSLib.Utilities.csproj", "{BCF61AE7-175A-45D1-A4CC-E7CE90F88E80}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICSLib.Authen.Data", "ICSLib.Authen.Data\ICSLib.Authen.Data.csproj", "{0C235DB3-1AF9-425D-AA9D-399B3E852433}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICSLib.Authen.Models", "ICSLib.Authen.Models\ICSLib.Authen.Models.csproj", "{9FB3CF07-C9D3-45A2-8FB0-35223A858CA9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICSLib.Authen.Services", "ICSLib.Authen.Services\ICSLib.Authen.Services.csproj", "{C2BEC023-DF0E-405C-A1F3-3B1FD6B0449C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICSLib.JobManApp", "ICSLib.ICJobManApp\ICSLib.JobManApp.csproj", "{96FE49E0-F246-4E5C-9D4E-CEB844548ED4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Documents", "0. Documents", "{8122FCE8-292C-4405-A104-362B9E881D33}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\RequiredSkills.txt = Documents\RequiredSkills.txt
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Looper-Template", "Looper-Template\", "{AD5ECBC0-264C-4501-9DDC-10009FC25C4A}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_61206"
+		Debug.AspNetCompiler.PhysicalPath = "Looper-Template\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61206\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_61206"
+		Release.AspNetCompiler.PhysicalPath = "Looper-Template\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61206\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "61206"
+		SlnRelativePath = "Looper-Template\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Falcon-Template", "Falcon-Template\", "{2BA04C62-D87B-4DF4-96B9-3796E3CA07FD}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55884"
+		Debug.AspNetCompiler.PhysicalPath = "Falcon-Template\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55884\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55884"
+		Release.AspNetCompiler.PhysicalPath = "Falcon-Template\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55884\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55884"
+		SlnRelativePath = "Falcon-Template\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF28063E-04BE-406A-B9C4-58A28D02B9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF28063E-04BE-406A-B9C4-58A28D02B9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF28063E-04BE-406A-B9C4-58A28D02B9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF28063E-04BE-406A-B9C4-58A28D02B9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF61AE7-175A-45D1-A4CC-E7CE90F88E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF61AE7-175A-45D1-A4CC-E7CE90F88E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF61AE7-175A-45D1-A4CC-E7CE90F88E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF61AE7-175A-45D1-A4CC-E7CE90F88E80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C235DB3-1AF9-425D-AA9D-399B3E852433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C235DB3-1AF9-425D-AA9D-399B3E852433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C235DB3-1AF9-425D-AA9D-399B3E852433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C235DB3-1AF9-425D-AA9D-399B3E852433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB3CF07-C9D3-45A2-8FB0-35223A858CA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB3CF07-C9D3-45A2-8FB0-35223A858CA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB3CF07-C9D3-45A2-8FB0-35223A858CA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB3CF07-C9D3-45A2-8FB0-35223A858CA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BEC023-DF0E-405C-A1F3-3B1FD6B0449C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BEC023-DF0E-405C-A1F3-3B1FD6B0449C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BEC023-DF0E-405C-A1F3-3B1FD6B0449C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BEC023-DF0E-405C-A1F3-3B1FD6B0449C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96FE49E0-F246-4E5C-9D4E-CEB844548ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96FE49E0-F246-4E5C-9D4E-CEB844548ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96FE49E0-F246-4E5C-9D4E-CEB844548ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96FE49E0-F246-4E5C-9D4E-CEB844548ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD5ECBC0-264C-4501-9DDC-10009FC25C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5ECBC0-264C-4501-9DDC-10009FC25C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5ECBC0-264C-4501-9DDC-10009FC25C4A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5ECBC0-264C-4501-9DDC-10009FC25C4A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{2BA04C62-D87B-4DF4-96B9-3796E3CA07FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA04C62-D87B-4DF4-96B9-3796E3CA07FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA04C62-D87B-4DF4-96B9-3796E3CA07FD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA04C62-D87B-4DF4-96B9-3796E3CA07FD}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{40E2C674-B4B3-44AC-9910-49C405C4DE53} = {90BDDA53-1D14-454F-AAC7-041498756932}
+		{CDCC27A7-2E18-421E-873A-20248989AC7C} = {D7671736-690B-4F7C-9D0B-FA8D712BD6A4}
+		{008EE24F-6335-45B3-847E-EDD8C9E13548} = {D9AF5CBB-B791-4738-ABA6-42A168E1B77E}
+		{FF28063E-04BE-406A-B9C4-58A28D02B9AB} = {A81D6822-0D89-4F31-9A23-612F12D05FBC}
+		{BCF61AE7-175A-45D1-A4CC-E7CE90F88E80} = {A81D6822-0D89-4F31-9A23-612F12D05FBC}
+		{0C235DB3-1AF9-425D-AA9D-399B3E852433} = {CDCC27A7-2E18-421E-873A-20248989AC7C}
+		{9FB3CF07-C9D3-45A2-8FB0-35223A858CA9} = {008EE24F-6335-45B3-847E-EDD8C9E13548}
+		{C2BEC023-DF0E-405C-A1F3-3B1FD6B0449C} = {40E2C674-B4B3-44AC-9910-49C405C4DE53}
+		{96FE49E0-F246-4E5C-9D4E-CEB844548ED4} = {5FB77D56-BC48-4E94-94BE-773850679437}
+		{AD5ECBC0-264C-4501-9DDC-10009FC25C4A} = {8122FCE8-292C-4405-A104-362B9E881D33}
+		{2BA04C62-D87B-4DF4-96B9-3796E3CA07FD} = {8122FCE8-292C-4405-A104-362B9E881D33}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {87F17597-CD87-4A6C-A2DE-F5E7827EA0AA}
+	EndGlobalSection
+EndGlobal

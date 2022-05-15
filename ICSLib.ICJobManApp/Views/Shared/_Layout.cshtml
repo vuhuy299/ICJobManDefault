@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewData["Title"] - Administration</title>
+    <link href="/css/simple-datatables@latest.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/select2.min.css" rel="stylesheet" />
+    <link href="/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="/js/jQuery.js"></script>
+    <script src="/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="sb-nav-fixed">
+    @*sb-sidenav-toggled*@
+    <partial name="_TopNavPartial" model="null" />
+    <div id="layoutSidenav">
+        <partial name="_SlideNavPartial" model="null" />
+        <div id="layoutSidenav_content">
+            <main>
+                @RenderBody()
+            </main>
+            <partial name="_BottomPartial" model="null" />
+        </div>
+    </div>
+    <!--begin::Modal-->
+    <div class="modal fade kt-modal-purchase" id="remoteModel" tabindex="-1" role="dialog" aria-labelledby="alertModelTitle" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="remoteModelTitle"></h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#remoteModel').modal('hide')">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body h-auto" id="remoteModelContent">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end::Modal-->
+    <!--begin::Modal-->
+    <div class="modal fade kt-modal-purchase" id="alertModel" tabindex="-1" role="dialog" aria-labelledby="alertModelTitle" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="alertModelTitle">Thông báo</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#alertModel').modal('hide')">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="alertModelContent">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end::Modal-->
+    <!--begin::Modal-->
+    <div class="modal fade kt-modal-purchase" id="confirmModel" tabindex="-1" role="dialog" aria-labelledby="confirmModelTitle" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="confirmModelTitle">Xác nhận</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#confirmModel').modal('hide')">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="confirmModelContent">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetConfirmButton()">Không</button>
+                    <button type="button" class="btn btn-primary" id="confirmModelButton">Có</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end::Modal-->
+
+    <script src="/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/simple-datatables@latest.js" crossorigin="anonymous"></script>
+    <script src="/js/datatables-simple-demo.js"></script>
+    <script src="/js/select2.min.js"></script>
+    <link rel="stylesheet" href="/datepicker/themes/jquery-ui.css" />
+    <script src="/datepicker/jquery-ui.js"></script>
+    <script src="/datepicker/jquery.ui.datepicker-vi.js"></script>
+    <script src="/js/bootstrap-multiselect.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap-multiselect.min.css" />
+    @await RenderSectionAsync("Scripts", required: false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".select2").select2({ width: '100%' });
+            $(".datepicker").datepicker($.datepicker.regional["vi"]);
+        });
+        function myAlert(message) {
+            $("#alertModelContent").html(message)
+            $("#alertModel").modal('show')
+        }
+        function myConfirm(message) {
+            $("#confirmModelContent").html(message)
+            $("#confirmModel").modal('show')
+        }
+        function resetConfirmButton() {
+            $("#confirmModelButton").off("click");
+            return true;
+        }
+
+
+        function openDialog(page, title) {
+            $('#remoteModelTitle').text(title);
+            $('#remoteModelContent').html('<iframe style="border: 0px; " src="' + page + '" width="100%"></iframe>');
+            $("#remoteModel").modal('show');
+        }
+        function closeDialog(reload) {
+            $('#remoteModelTitle').text('');
+            $('#remoteModelContent').html('');
+            $("#remoteModel").modal('hide');
+            if (reload) {
+                window.location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\bin\Debug\net6.0\ICSLib.Utilities.deps.json
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\bin\Debug\net6.0\ICSLib.Utilities.dll
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\bin\Debug\net6.0\ICSLib.Utilities.pdb
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\obj\Debug\net6.0\ICSLib.Utilities.csproj.AssemblyReference.cache
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\obj\Debug\net6.0\ICSLib.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\obj\Debug\net6.0\ICSLib.Utilities.AssemblyInfoInputs.cache
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\obj\Debug\net6.0\ICSLib.Utilities.AssemblyInfo.cs
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\obj\Debug\net6.0\ICSLib.Utilities.csproj.CoreCompileInputs.cache
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\obj\Debug\net6.0\ICSLib.Utilities.dll
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\obj\Debug\net6.0\refint\ICSLib.Utilities.dll
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\obj\Debug\net6.0\ICSLib.Utilities.pdb
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\obj\Debug\net6.0\ref\ICSLib.Utilities.dll
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\bin\Debug\net6.0\ICSLib.Utilities.runtimeconfig.json
+F:\CODE\C#\ICJobMan\ICSLib.Utilities\obj\Debug\net6.0\ICSLib.Utilities.genruntimeconfig.cache

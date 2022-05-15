@@ -1,0 +1,104 @@
+﻿@using ICSLib.BaseModels.Common
+@using ICSLib.Authen.Models.RoleClaims
+@model PagedResult<RoleClaimViewModel>
+
+@{
+    ViewData["Title"] = "Danh sách Claim của quyền " + ViewBag.RoleName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+}
+@section Scripts{
+}
+<div class="container-fluid px-4">
+    <h3 class="mt-4">@ViewData["Title"]</h3>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="@Url.Action("index", "home")">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Claim của Quyền</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header pt-1 pb-1">
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <div class="row">
+                        <span style="font-size:12px; color:GrayText;">Tìm kiếm</span>
+                    </div>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <a class="btn btn-primary pt-1 pb-1" asp-controller="roleclaim" asp-action="create" asp-route-roleid="@ViewBag.RoleId">Thêm</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body pt-1 pb-1">
+            <div class="row">
+                <div class="col">
+                    <form asp-action="index" method="get">
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-6 mt-2">
+                                <input type="text" class="form-control" placeholder="Từ khóa..." name="keyword" value="@ViewBag.Keyword" />
+                            </div>
+                            <div class="col-12 col-md-6 mt-2">
+                                <button type="submit" class="btn btn-secondary" value="Tìm">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col-6 d-flex align-items-center">
+            <div class="row">
+                <span style="font-size:12px; color:gray;">Tìm thấy <font style="color:red;">@Model.TotalRecords</font> bản ghi</span>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <table id="datatablesSimple" data-searching="false" data-paging="false" data-info="false">
+            <thead>
+                <tr>
+                    <th data-sortable="false" style="text-align:center; width:50px;">
+                        #
+                    </th>
+                    <th data-sortable="false">Loại</th>
+                    <th data-sortable="false">Giá trị</th>
+                    <th data-sortable="false"></th>
+                    <th data-sortable="false"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    count++;
+                    <tr class="@(count % 2 == 0 ? "bg-white" : "bg-light")">
+                        <td style="text-align:center; width:50px;">
+                            @((Model.PageIndex-1)*Model.PageSize + count)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClaimType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClaimValue)
+                        </td>
+
+                        <td style="width:40px" align="center">
+                            <a asp-controller="roleclaim" asp-action="edit" asp-route-id="@item.Id" title="Sửa">
+                                <i class="fa fa-edit" style="color:gray; text-decoration:none;"></i>
+                            </a>
+                        </td>
+                        <td style="width:40px" align="center">
+                            <a href="javascript:openDialog('@Url.Action("delete", "roleclaim", new { id = item.Id })', 'Xóa Claim của Quyền')" title="Xóa">
+                                <i class="fa fa-trash" style="color:red; text-decoration:none;"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-end">
+            @await Component.InvokeAsync("Pager", Model)
+        </div>
+    </div>
+</div>

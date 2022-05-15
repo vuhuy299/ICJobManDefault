@@ -1,0 +1,15 @@
++ ASP.Net Core Web App
+	- Configuration, Request pipeline
+	- Routing trong .Net core
+	- Dependency injection (DI)
+	- Làm việc với tham số trong appsettings.json
+	- Làm việc với static file
+	- HTML, CSS, Javascript
+	- MVC (Model, View, Controller, Partial, Component)
+	- Sử dụng Fluent Validation
++ Entity Framwork (Code first)
+	- Tạo Entity class
+	- Cấu hình Entity với Fluent API
+	- Migration database
+	- Data Seeding
++ ASP.Net Core Identity
